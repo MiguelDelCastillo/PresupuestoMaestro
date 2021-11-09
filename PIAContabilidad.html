@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Presupuesto Maestro</title>
+</head>
+<body>
+
+<H1><center> Presupuesto Maestro </H1></center>
+<form method="POST" name="hom" action="PIAContabilidad.php">
+     
+<!---Agregar estilos css o diseños a las tablas--->
+
+<style type="text/css">
+
+     body{
+     font-family: arial, helvetica;
+     background: #ccffcc;
+     }
+     
+     table {
+          border-collapse: collapse;
+          background: #ffffff;
+     }
+
+     th, td{
+          
+          padding: 10px;
+     }
+
+     tr:last-child td:first-child{
+          border-bottom-left-radius: 10px;
+     }
+     tr:last-child td:last-child{
+          border-bottom-right-radius: 10px;
+     }
+     th:first-child{
+          border-top-left-radius: 10px;
+          background: #3366cc;
+          color: #ffffff;
+     }
+     th:last-child{
+          border-top-right-radius: 10px;
+     }
+
+     .btn{
+         position: relative;
+         display: block;
+         height: 55px;
+         width: 200px;
+         border-radius: 4px;
+         text-transform: uppercase;
+         background-color: transparent;
+         color: #000000;
+         font-size: 18px;
+         overflow: hidden;
+         transition: all 500ms ease;
+         border: 2px solid #33cc33;
+         margin-bottom: 40px;
+         z-index: 0;
+         font-weight: 700;
+         cursor: pointer;
+
+     }
+.btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: auto;
+  background-color: #33cc33;
+  transition: all 500ms ease;
+  z-index: -1;
+}
+.btn--1:hover {
+  animation: shadow-pulse 1000ms 1;
+  background-color: #33cc33;
+  color: #000000;
+}
+@keyframes shadow-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(32, 226, 215, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 8px 16px rgba(32, 226, 215, 0);
+  }
+}
+
+input[type = "text"] {
+  borde : none;
+  border-botton: 1px solid #ffffff;
+  background: transparent;
+  outline : none;
+  height : 25px ;
+  color :  #000000 ;
+  font-size : 16px;
+}
+</style>
+<!---*******************************************************************************************************************---->
+<center>
+<!-------------Agrego la primer tabla. Tabla año pasado--------------------------->
+	<table>
+          <tr>      
+    <th colspan="4">Estado de situacion financiera al 31 de Diciembre de 2018</th>
+         </tr>
+
+         <tr>      
+    <td colspan="2">Activos:</td>
+    
+    <td colspan="2">Pasivos</td>
+         </tr>
+
+          <tr>      
+    <td>Circulante</td>
+    <td></td>
+    <td>A corto plazo</td>
+    <td></td>
+         </tr>
+
+         <tr>
+    <td>Efectivo</td>
+    <td><input type=text name="efec"></td>
+    <td>Proveedores</td>
+    <td><input type=text name="prov"></td>
+         </tr>
+
+          <tr>
+    <td>Clientes</td>
+    <td><input type=text name="clien"></td>
+    <td>Documentos por pagar</td>
+    <td><input type=text name="docpag"></td>
+         </tr>
+
+          <tr>
+    <td>Inventario de materiales</td>
+    <td><input type=text name="invdemat"></td>
+    <td>Impuesto, sobre la renta por pagar</td>
+    <td><input type=text name="imprenpag"></td>
+         </tr>
+
+         <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>.</td>
+         </tr>
+
+         <tr>
+    <td>Inventario de articulos terminados</td>
+    <td><input type=text name="invdeartterm"></td>
+    <td></td>
+    <td></td>
+         </tr>
+
+         <tr>
+    <td></td>
+    <td></td>
+    <td>A largo plazor</td>
+    <td></td>
+         </tr>
+
+         <tr>
+    <td></td>
+    <td></td>
+    <td>Obligaciones por pagar</td>
+    <td><input type=text name="obligpag"></td>
+         </tr>
+
+         <tr>
+    <td>No circulante</td>
+    <td></td>
+    <td></td>
+    <td></td>
+         </tr>
+
+         <tr>
+    <td>Terreno</td>
+    <td><input type=text name="terre"></td>
+    <td></td>
+    <td></td>
+         </tr>
+
+         <tr>
+    <td>Planta y equipo</td>
+    <td><input type=text name="planyequi"></td>
+    <td>Capital contable</td>
+    <td></td>
+         </tr>
+
+         <tr>
+    <td>Depreciacion acumulada</td>
+    <td><input type=text name="depracum"></td>
+    <td>Capital aportado</td>
+    <td><input type=text name="capiapor"></td>
+         </tr>
+
+         <tr>
+    <td></td>
+    <td></td>
+    <td>Capital ganado</td>
+    <td><input type=text name="capigana"></td>
+         </tr>
+
+         <tr>
+    <td></td>
+    <td></td>
+    <td>Total capital contable</td>
+    <td><input type=text name="totcapicont"></td>
+         </tr>
+
+
+     </table>
+<!--*********************Termino la tabla año pasado. Fin Tabla año paso****************************-->
+<br>
+<!-------------Agrego la primera tabla. Tabla 1--------------------------->
+     <table>
+           <tr>      
+    <th colspan="4">Requisitos de producto</th>
+         </tr>
+
+          <tr>      
+    <td bgcolor="3366cc"></td>
+    <td bgcolor="3366cc"><font color= "#ffffff">Producto 1</td></font>
+    <td bgcolor="3366cc"><font color= "#ffffff">Producto 2</td></font>
+    <td bgcolor="3366cc"><font color= "#ffffff">Producto 3</td></font>
+         </tr>
+
+         <tr>
+    <td>Material A</td>
+    <td><input type=text name="mAprod1"></td>
+    <td><input type=text name="mAprod2"></td>
+    <td><input type=text name="mAprod3"></td>
+        </tr>
+        <tr>
+    <td>Material B</td>
+    <td><input type=text name="mBprod1"></td>
+    <td><input type=text name="mBprod2"></td>
+    <td><input type=text name="mBprod3"></td>
+        </tr>
+        <tr>
+    <td>Material C</td>
+    <td><input type=text name="mCprod1"></td>
+    <td><input type=text name="mCprod2"></td>
+    <td><input type=text name="mCprod3"></td>
+       </tr>
+       <tr>
+    <td>Horas de mano de obra</td>
+    <td><input type=text name="hprod1"></td>
+    <td><input type=text name="hprod2"></td>
+    <td><input type=text name="hprod3"></td>
+        </tr>
+	</table>
+<!--*********************Termino la Tabla 1. Fin Tabla 1****************************-->
+<br>
+<!-------------Agrego la segunda tabla. Tabla 2--------------------------->
+     <table>
+         <tr>      
+    <th colspan="5">Informacion de inventarios</th>
+         </tr>
+
+         <tr>      
+    <td bgcolor="3366cc"><font color="#ffffff">Dato</td></font>
+    <td bgcolor="3366cc"><font color="#ffffff">Inventario inicial del 1er. semestre</td></font>
+    <td bgcolor="3366cc"><font color="#ffffff">Inventario final del 2do. semestre</td></font>
+    <td bgcolor="3366cc"><font color="#ffffff">Costo del 1er. semestre</td></font>
+    <td bgcolor="3366cc"><font color="#ffffff">Costo del 2do. semestre</td></font>
+         </tr>
+
+         <tr>
+    <td>Material A</td>
+    <td><input type=text name="mAinvin1sem"></td>
+    <td><input type=text name="mAinvfin2sem"></td>
+    <td><input type=text name="mAcost1sem"></td>
+    <td><input type=text name="mAcost2sem"></td>
+         </tr>
+
+         <tr>
+    <td>Material B</td>
+    <td><input type=text name="mBinvin1sem"></td>
+    <td><input type=text name="mBinvfin2sem"></td>
+    <td><input type=text name="mBcost1sem"></td>
+    <td><input type=text name="mBcost2sem"></td>
+         </tr>
+
+         <tr>
+    <td>Material C</td>
+    <td><input type=text name="mCinvin1sem"></td>
+    <td><input type=text name="mCinvfin2sem"></td>
+    <td><input type=text name="mCcost1sem"></td>
+    <td><input type=text name="mCcost2sem"></td>
+         </tr>
+
+         <tr>
+    <td>Producto 1</td>
+    <td><input type=text name="p1invin1sem"></td>
+    <td><input type=text name="p1mAinvfin2sem"></td>
+    <td></td>
+    <td></td>
+         </tr>
+
+         <tr>
+    <td>Producto 2</td>
+    <td><input type=text name="p2invin1sem"></td>
+    <td><input type=text name="p2mAinvfin2sem"></td>
+    <td></td>
+    <td></td>
+         </tr>
+
+         <tr>
+    <td>Producto 3</td>
+    <td><input type=text name="p3invin1sem"></td>
+    <td><input type=text name="p3mAinvfin2sem"></td>
+    <td></td>
+    <td></td>
+         </tr>
+
+
+     </table>
+
+
+<!--*********************Termino la Tabla 2. Fin Tabla 2****************************-->
+<br>
+<!-------------Agrego la tercera tabla. Tabla 3--------------------------->
+     <table>
+         <tr>      
+    <th colspan="4">Productos</th>
+         </tr>
+
+         <tr>      
+    <td bgcolor="3366cc"></td></font>
+    <td bgcolor="3366cc"><font color="#ffffff">Producto 1</td></font>
+    <td bgcolor="3366cc"><font color="#ffffff">Producto 2</td></font>
+    <td bgcolor="3366cc"><font color="#ffffff">Producto 3</td></font>
+         </tr>
+
+         <tr>
+    <td>Precio de venta del 1er. semestre</td>
+    <td><input type=text name="preven1semp1"></td>
+    <td><input type=text name="preven1semp2"></td>
+    <td><input type=text name="preven1semp3"></td>
+         </tr>
+
+         <tr>
+    <td>Precio de venta del 2do. semestre</td>
+    <td><input type=text name="preven2semp1"></td>
+    <td><input type=text name="preven2semp2"></td>
+    <td><input type=text name="preven2semp3"></td>
+         </tr>
+
+         <tr>
+    <td>Ventas planeadas del 1er. semestre</td>
+    <td><input type=text name="venplan1semp1"></td>
+    <td><input type=text name="venplan1semp2"></td>
+    <td><input type=text name="venplan1semp3"></td>
+         </tr>
+
+         <tr>
+    <td>Ventas planeadas del 2do. semestre</td>
+    <td><input type=text name="venplan2semp1"></td>
+    <td><input type=text name="venplan2semp2"></td>
+    <td><input type=text name="venplan2semp3"></td>
+         </tr>
+     </table>
+
+<br>
+
+     <table>
+         <tr>      
+    <th colspan="4">Gastos de administracion y ventas</th>
+         </tr>
+
+         <tr>
+    <td>Depreciacion</td>
+    <td><input type=text name="depreciacion"></td>
+         <tr>
+
+    <td>Sueldos y salarios</td>
+    <td><input type=text name="sueldysala"></td>
+         </tr>
+
+         <tr>
+    <td>Comisiones</td>
+    <td><input type=text name="comisiones"></td>
+         </tr>
+
+         <tr>
+    <td>Varios</td>
+    <td>1 Semestre<input type=text name="varios1s"> 2 Semestre<input type=text name="varios2s"></td>
+         </tr>
+
+         <tr>
+    <td>Intereses por obligaciones</td>
+    <td><input type=text name="interporoblig"></td>
+          </tr>
+
+     </table>
+
+     <br>
+
+     <table>
+         <tr>      
+    <th colspan="4">Gastos de fabricacion indirectos</th>
+         </tr>
+
+         <tr>
+    <td>Depreciacion</td>
+    <td><input type=text name="depregasind"></td>
+         <tr>
+
+    <td>Seguros</td>
+    <td><input type=text name="seguros"></td>
+         </tr>
+
+         <tr>
+    <td>Mantenimiento</td>
+    <td>1 Semestre<input type=text name="manteni1s"> 2 Semestre<input type=text name="manteni2s"></td>
+         </tr>
+
+         <tr>
+    <td>Energeticos</td>
+    <td>1 Semestre<input type=text name="interporoblig1s"> 2 Semestre<input type=text name="interporoblig2s"></td>
+          </tr>
+
+          <tr>
+    <td>Varios</td>
+    <td><input type=text name="variosgasind"></td>
+          </tr>
+
+     </table>
+
+     <table>
+         <tr>      
+    <th colspan="4">Datos Adicionales</th>
+         </tr>
+
+         <tr>
+    <td>Maquinaria nueva</td>
+    <td><input type=text name="maquinaria"></td>
+         <tr>
+
+    <td>Tasa de impuesto sobre la renta</td>
+    <td><input type=text name="tasaimprenta"></td>
+         </tr>
+
+         <tr>
+    <td>Tasa de reparto de utilidades</td>
+    <td><input type=text name="tasareputilidades"></td>
+         </tr>
+
+         <tr>
+    <td>En 2019 se pagara solo <input type=text name="pormatcomp"> % del valor de los materiales comprados</td>
+         </tr>
+         
+          <tr>
+    <td>El <input type=text name="porcven2019"> % de las ventas de 2019 se cobraran en este periodo</td>
+         </tr>
+
+     </table>
+</center>
+<br>
+<center>
+<a href=""><input type= submit class="btn btn--1" value="CALCULAR"></a>
+</center>
+<br>
+</form>
+</body>
+</html>
